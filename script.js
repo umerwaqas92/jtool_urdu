@@ -4,6 +4,9 @@
 		return rati;
 	}
 	
+	function english(){
+		window.open("https://vovoapps.github.io/jtool","_self")
+	}
 	function total_price(price,rati){
 	var pr=(rati/96)*price;
 	return pr.toFixed(1) +" rupees" ;
