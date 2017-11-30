@@ -1,0 +1,305 @@
+<html>
+<head>
+<title>Jewllery Tools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="rgb(75,85,155)" >
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<link rel="icon" href="jewllerico4.png">
+<link rel="stylesheet" href="bower_components/css-ripple-effect/dist/ripple.min.css">
+
+</head>
+<body onload="tab_click(0);">
+<script src="script.js" >
+</script>
+
+
+
+
+<div class="header" id="header" >
+
+<div  class="tabs"  >
+<button class="tab_btn"  id="tab_btn0" onclick="tab_click(0);" style=" outline: none; ";>Gold Sell</button>/
+<button class="tab_btn" id="tab_btn1"onclick="tab_click(1);"style=" outline: none;"; >Gold Buy</button>/
+<button class="tab_btn" id="tab_btn2"onclick="tab_click(2);"style=" outline: none;";>Calculator</button>/
+<button class="tab_btn" id="tab_btn3"onclick="tab_click(3);"style=" outline: none;";>Gram Calculator</button>/
+<button class="tab_btn" id="tab_btn4"onclick="tab_click(4);"style=" outline: none;";>Karat Make</button>/
+<button class="tab_btn" id="tab_btn5"onclick="tab_click(5);"style=" outline: none;";>Cut Ratio</button>/
+<button class="tab_btn"id="tab_btn6" onclick="tab_click(6);"style=" outline: none;";>Karat Cut</button>/
+<button class="tab_btn"id="tab_btn7" onclick="tab_click(7);" style="margin-right:150px;outline: none;">About</button>
+
+</div>
+<img class="icon" src="ico.png"  style="position: fixed;left:0;top:0; height:55px;"></image>
+</div>
+
+
+
+<div class="parent" style="  margin-top:55px;text-align:center; width:100%;">
+
+<div class="content" style="  margin:auto; max-width:1000px; text-align:left;">
+
+
+
+<div id="tab0" >
+<div class="tag"  style="margin-top:60px;" >نرخ</div>
+<input  style="width:100%; outline: none;font-size:130%; padding:15px;" class="card" type="number" maxlength="6" id="price" placeholder="Price"/>
+<div class="tag">کل وزن</div>
+<div class="card" style="width:100%;" >
+<input  style="width:32%;" class="input" type="number" maxlength="5" id="tola" placeholder="Tola"/>
+<input style="width:32%;" class="input"type="number" maxlength="2" id="masha" placeholder="Masha"/>
+<input style="width:32%;" class="input" type="number" maxlength="4"id="rati" placeholder="Rati"/>
+</div>
+<div class="tag">کاٹ پر تولا</div>
+<div class="card" style="width:100%;" >
+<input style="width:49%;" class="input" type="number" id="ct_masha" placeholder="Masha"/>
+<input style="width:49%;" class="input" type="number" id="ct_rati" placeholder="Rati"/>
+</div>
+<br>
+<div class="card" style="width:100%; margin-bottom:50px;" >
+<div id="result"  >
+<table style="width:100%; align:center; padding:20px; ">
+  <tr>
+    <td >کل وزن</td>
+    <td class="out" id="out1">0  - 0 - 0.0</td>
+  </tr>
+  <tr>
+    <td >کل وزن گرام میں</td>
+    <td class="out" id="out1_">0.000g</td>
+  </tr>
+  <tr>
+    <td>ٹوٹل کاٹ</td>
+    <td class="out" id="out2">0  - 0 - 0.0</td>
+  </tr>
+  
+   <tr>
+    <td>بقایا وزن</td>
+    <td class="out" id="out3">0  - 0 - 0.0</td>
+  </tr>
+  
+  <tr  >
+    <td >کریٹ</td>
+    <td class="out" id="out5" >0.0k</td>
+  </tr>
+  
+  <tr>
+    <td>کل قیمت</td>
+    <td class="out"  id="out4" >0.0</td>
+  </tr>
+ 
+</table>
+
+</div>
+</div>
+<div class="footer" style="width:100%;text-align:center; position:fixed;bottom:0;left:0 ">
+<button class="footer"   id="calc"   onclick="reset0();">Reset</button>
+<button class="footer"  type="submit" id="calc" value="Submit" onclick="calculate();">Calculate</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div id="tab1"  >
+<div class="tag"  style="margin-top:60px;" >نرخ</div>
+<input style="width:100%; font-size:130%; outline: none;padding:15px;" class="card" type="number" maxlength="6" id="price_tab1" placeholder="Price"/>
+<div class="tag"   >کل قیمت</div>
+<input style="width:100%; font-size:130%;outline: none; padding:15px;" class="card" type="number" maxlength="6" id="total_rps_tab1" placeholder="Total Rupees"/>
+<br>
+<br>
+<div class="card" style="width:100%;" >
+<div id="result"  >
+<table style="width:100%; align:center; padding:20px; ">
+  <tr>
+    <td >کل وزن</td>
+    <td class="out" id="tab1_out1">0  - 0 - 0.0</td>
+  </tr>
+  <tr>
+    <td >کل وزن گرام میں</td>
+    <td class="out" id="tab1_out2">0.000g</td>
+  </tr>
+  
+</table>
+
+</div>
+</div>
+<div class="footer" style="width:100%; text-align:center; position:fixed;bottom:0;left:0">
+<button class="footer"   id="calc"   onclick="reset1();">Reset</button>
+<button class="footer"  id="calc"   onclick="calculatetab1();">Calculate</button>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<div id="tab2"  >
+<div class="card" style="width:100%;  padding-bottom:14px; padding-top:14px; margin-top:55px; text-align:center; vertical-align:center;" >
+<a class="tab_" id="out1_tab2" style="font-size:130%;  ">0 - 0 - 0.0</a>
+</div>
+<br>
+<div class="card"    style=" width:100%; " >
+<input  style="width:32%;" class="input" type="number" maxlength="5" id="tola_tab2" placeholder="Tola"/>
+<input style="width:32%;" class="input"type="number" maxlength="2" id="masha_tab2" placeholder="Masha"/>
+<input style="width:32%;" class="input" type="number" maxlength="4"id="rati_tab2" placeholder="Rati"/>
+</div>
+<div class="card" style="width:100%;    text-align:center; vertical-align:center;" >
+<a class="tab_"   id="out2_tab2" style="font-size:90%;  "></a>
+</div>
+
+
+<div style=" width:100%; text-align:center; position:fixed;bottom:0; background-color: #f26224; left:0">
+
+
+<button class="footer"    id="calc" style=" width:30%;  " onclick="reset2(0);">Reset</button>
+<button class="footer"    id="calc" style=" width:30%; font-size:150%; " onclick="calculatetab2(0);">-</button>
+<button class="footer"  id="calc" style=" width:30%; font-size:150%;" onclick="calculatetab2(1);">+</button>
+</div>
+
+
+</div>
+
+
+
+
+<div id="tab3"  >
+<div class="tag"  style="margin-top:60px;" >نرخ</div>
+<input style="width:100%; outline: none; font-size:130%; padding:15px;" class="card" type="number" maxlength="6" id="price_tab3" placeholder="Price"/>
+<div class="tag"   >کل گرام</div>
+<input style="width:100%; outline: none; font-size:130%; padding:15px;" class="card" type="number" maxlength="6" id="grams_tab3" placeholder="Grams"/>
+<div class="tag"   >راتی کاٹ پر تولا</div>
+<input style="width:100%; outline: none; font-size:130%; padding:15px;" class="card" type="number" maxlength="6" id="ctrati_tab3" placeholder="Rati Per Tola"/>
+
+<br>
+<br>
+<div class="card" style="width:100%; margin-bottom:50px;" >
+<div id="result"  >
+<table style="width:100%; align:center; padding:20px; ">
+ <tr>
+    <td >کل وزن تولا ماشا راتی مٰیں</td>
+    <td class="out" id="tab3_out0">0  - 0 - 0.0 </td>
+  </tr>
+  <tr>
+    <td >کل وزن گرام </td>
+    <td class="out" id="tab3_out1">11.656g</td>
+  </tr>
+  
+  <tr>
+    <td>کل کاٹ</td>
+    <td class="out" id="tab3_out2">0  - 0 - 0.0</td>
+  </tr>
+  
+   <tr>
+    <td>بقایا وزن</td>
+    <td class="out" id="tab3_out3">0  - 0 - 0.0</td>
+  </tr>
+  
+  <tr  >
+    <td >کریٹ</td>
+    <td class="out" id="tab3_out4" >0.0k</td>
+  </tr>
+  
+  <tr>
+    <td>کل قیمت</td>
+    <td class="out"  id="tab3_out5" >0.0</td>
+  </tr>
+ 
+</table>
+
+</div>
+</div>
+<div class="footer" style="width:100%;text-align:center; position:fixed;bottom:0;left:0 ">
+<button class="footer" type="submit" id="calc"  onclick="reset3();">Reset</button>
+<button class="footer" type="submit" id="calc"  onclick="calculate3();">Calculate</button>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="tab4" > tab 4</div>
+
+
+
+
+<div id="tab5">
+<div class="tag">کل وزن</div>
+<div class="card" style="width:100%;" >
+<input  style="width:32%;" class="input" type="number" maxlength="5" id="tolai_tab5" placeholder="Tola"/>
+<input style="width:32%;" class="input"type="number" maxlength="2" id="mashai_tab5" placeholder="Masha"/>
+<input style="width:32%;" class="input" type="number" maxlength="4"id="ratii_tab5" placeholder="Rati"/>
+</div>
+<div class="tag">تیزاب کے بعد وزن</div>
+<div class="card" style="width:100%;" >
+<input  style="width:32%;" class="input" type="number" maxlength="5" id="tolaf_tab5" placeholder="Tola"/>
+<input style="width:32%;" class="input"type="number" maxlength="2" id="mashaf_tab5" placeholder="Masha"/>
+<input style="width:32%;" class="input" type="number" maxlength="4"id="ratif_tab5" placeholder="Rati"/>
+</div>
+
+<br>
+<br>
+<div class="card" style="width:100%;" >
+<div id="result"  >
+<table style="width:100%; align:center; padding:20px; ">
+ 
+  <tr>
+    <td >کاٹ پر تولا</td>
+    <td class="out" id="tab5_out0" >0.0k</td>
+  </tr>
+  
+  <tr>
+    <td>کریٹ</td>
+    <td class="out"  id="tab5_out1" >0.0</td>
+  </tr>
+ 
+</table>
+
+</div>
+</div>
+<div class="footer" style="width:100%;text-align:center; position:fixed;bottom:0;left:0 ">
+<button class="footer" type="submit" id="calc" value="Submit" onclick="reset5();">Reset</button>
+<button class="footer" type="submit" id="calc" value="Submit" onclick="calculate5();">Calculate</button>
+
+</div>
+</div>
+
+
+
+
+<div id="tab6"> tab 6</div>
+<div id="tab7"  >
+<br><br><br><br><br>
+<div class="card" style=" padding:50px; text-align:center;">
+
+<a   ><big><b>JEWLLERY TOOLS_V4.0</b><br></big>Developed by Waqas Khan</a>
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+</div>
+
+</body>
+</html>

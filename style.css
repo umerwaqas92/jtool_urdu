@@ -1,0 +1,168 @@
+body{
+	font-family: Arial;
+	background-color:rgb(242,241,241);
+	margin-bottom:60px;
+	
+}
+@font-face {
+    font-family: 'noori'; /*a name to be used later*/
+    src: url('Jameel Noori Nastaleeq.ttf'); /*URL to font*/
+}
+.header{
+	width:100%; 
+	height:55px;
+	color:white;
+	position: fixed;
+	left: 0;
+   top:0;
+	background-color:rgb(75,85,155);
+	
+	
+
+}
+.tabs {	
+	margin-left:70px;  
+	padding-left:25px;
+	padding-top:10px;width:100%; 
+	text-align:center; 
+	white-space: nowrap; 
+	overflow: auto; 
+	color:#90A4AE;
+	
+}
+.tabs button{	
+	
+	color:#ECEFF1;
+	
+	
+}
+
+.tag{
+	font-family: 'noori';
+	font-size:90%;
+	color:#757575;
+	margin-top:10px;
+	margin-bottom:5px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	outline-width:1px;
+	background-color:white;
+	border-radius: 5px;
+	padding:2px;
+	border:none;
+	
+
+	
+
+}
+.card tr td{
+	font-family: 'noori';
+}
+
+.input{
+	outline: none;
+	font-size:120%;
+	padding:15px;
+	border:none;
+	
+	font-style:bold;
+	color:black;
+}
+
+button.tab_btn:hover{
+	color:white;
+	
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+	
+    
+}
+.footer {
+   outline: none;
+   height:50px;
+   width: 49%;
+   background-color: #f26224;
+   color: white;
+  
+   font-size:90%;
+   text-align: center;
+   border:none;
+   
+}
+
+
+
+.tab_btn{
+	border:none;
+	background-color:rgb(75,85,155);
+	color:white;
+	font-size:90%;
+	padding:14px;
+}
+
+
+
+	
+	button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 15px 40px;
+
+  font-size: 22px;
+ 
+  background: #2196F3;
+}
+
+/* Ripple magic */
+button{
+  position: relative;
+  overflow: hidden;
+}
+
+
+button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}	
+	
